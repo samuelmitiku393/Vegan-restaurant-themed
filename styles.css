@@ -1,0 +1,316 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f8fdf8;
+    color: #2d4a2d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #a8d5a8;
+    color: #2d4a2d;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: #2d4a2d;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Layout */
+.container {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #a8d5a8 0%, #4a8c4a 100%);
+    z-index: -1;
+}
+
+.header-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q40,5 60,20 T100,20" stroke="%23ffffff" stroke-width="2" fill="none" opacity="0.1"/><path d="M10,40 Q30,25 50,40 T90,40" stroke="%23ffffff" stroke-width="2" fill="none" opacity="0.1"/><path d="M30,60 Q50,45 70,60 T100,60" stroke="%23ffffff" stroke-width="2" fill="none" opacity="0.1"/></svg>');
+    background-size: cover;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.restaurant-name {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.tagline {
+    font-style: italic;
+    color: #e8f5e8;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.menu-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e8f5e8;
+}
+
+.menu-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e8f5e8;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    font-size: 1.2rem;
+    color: #4a8c4a;
+    flex: 1;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d4a2d;
+    background-color: #f0f8f0;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+}
+
+.item-description {
+    color: #5a6c5a;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.nutrition-info {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nutrition-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    background-color: #f0f8f0;
+    color: #4a8c4a;
+    font-weight: 600;
+}
+
+/* Special Elements */
+.health-note {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d0ead0 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    border-left: 4px solid #4a8c4a;
+}
+
+.health-note h3 {
+    color: #2d4a2d;
+    margin-bottom: 0.8rem;
+}
+
+.health-note p {
+    color: #5a6c5a;
+    font-size: 0.95rem;
+}
+
+/* Navigation */
+.category-nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 0.8rem 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-bottom: 2px solid #e8f5e8;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-list {
+    display: flex;
+    list-style: none;
+    padding: 0 1rem;
+}
+
+.category-item {
+    margin-right: 1rem;
+}
+
+.category-link {
+    color: #5a6c5a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    background-color: #f8fdf8;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e8f5e8;
+}
+
+.category-link.active {
+    background-color: #4a8c4a;
+    color: white;
+    border-color: #4a8c4a;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, #2d4a2d 0%, #1a331a 100%);
+    margin-top: 2rem;
+    color: #e8f5e8;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #a8d5a8;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-top: 1px solid #3a5a3a;
+    border-bottom: 1px solid #3a5a3a;
+}
+
+.copyright {
+    margin-top: 1rem;
+    color: #a8d5a8;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .menu-section {
+        padding: 2rem;
+    }
+}
